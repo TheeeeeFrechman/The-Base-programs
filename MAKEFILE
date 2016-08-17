@@ -1,0 +1,6 @@
+client:client.o
+	gcc -I/usr/include/mysql client.o -L/usr/lib64/mysql -lmysqlclient -g -o client -lpthread
+client.o:client.c sock_head.h
+	gcc -I/usr/include/mysql client.c -L/usr/lib64/mysql -lmysqlclient -g -c -lpthread
+clean:
+	rm client client.o
